@@ -10,7 +10,7 @@ const input = (props) => {
 				console.log(lat, long);
 
 				fetch(
-					`http://api.weatherapi.com/v1/current.json?key=e1b4ce07c4d44753be4182931212503&q=${lat},${long}`
+					`https://api.weatherapi.com/v1/current.json?key=e1b4ce07c4d44753be4182931212503&q=${lat},${long}`
 				)
 					.then((response) => response.json())
 					.then((city) => props.setCity(city.location.region));

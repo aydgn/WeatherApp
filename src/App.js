@@ -28,7 +28,7 @@ function App() {
 	useEffect(() => {});
 
 	const { data, error } = useSWR(
-		`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`,
+		`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`,
 		fetcher
 	);
 	// handle loading and error
