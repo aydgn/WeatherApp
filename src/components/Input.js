@@ -1,10 +1,10 @@
-const input = (props) => {
+import { useState } from "react";
+const Input = (props) => {
+	const [inputValue, setInputValue] = useState("");
 	function getLocation(lat, long) {
 		if ("geolocation" in navigator) {
 			/* Eğer cihazda GPS özellikleri aktifse tahmini kordinantlarını alıyoruz. */
 			navigator.geolocation.getCurrentPosition(function (position) {
-				console.log("Latitude: ", position.coords.latitude);
-				console.log("Longitude: ", position.coords.longitude);
 				lat = position.coords.latitude;
 				long = position.coords.longitude;
 				console.log(lat, long);
@@ -20,26 +20,42 @@ const input = (props) => {
 		}
 	}
 	return (
-		<div className="flex flex-col items-center justify-center p-3 sm:flex-row">
-			<input
-				className="order-first w-full p-3 mx-3 border rounded shadow sm:w-auto"
-				placeholder="Type a city &crarr;"
-				autoFocus
-				onKeyPress={(e) => {
-					if (e.code === "Enter" && e.target.value !== "") {
-						props.setCity(e.target.value);
-					}
-				}}
-			></input>
-			<span>or</span>
-			<button
-				className="order-2 w-full p-3 mx-3 border shadow sm:w-auto "
-				onClick={getLocation}
-			>
-				📍 Get my location
-			</button>
-		</div>
+		<>
+			<div className="flex items-center justify-center px-3">
+				<input
+					className="w-full p-3 border rounded shadow sm:w-auto"
+					placeholder="Type a city &crarr;"
+					autoFocus
+					onChange={(e) => {
+						console.log(e.target.value);
+						setInputValue(e.target.value);
+					}}
+					onKeyPress={(e) => {
+						if (e.code === "Enter" && e.target.value !== "") {
+							props.setCity(e.target.value);
+						}
+					}}
+				></input>
+				<button
+					className="p-3 border shadow"
+					onClick={() => {
+						props.setCity(inputValue);
+					}}
+				>
+					Search
+				</button>
+			</div>
+			<div className="flex flex-col items-center justify-center p-3">
+				<span>or</span>
+				<button
+					className="w-full p-3 mx-3 border shadow sm:w-auto"
+					onClick={getLocation}
+				>
+					📍 Get my location
+				</button>
+			</div>
+		</>
 	);
 };
 
-export default input;
+export default Input;
