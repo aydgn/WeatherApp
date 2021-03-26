@@ -1,5 +1,9 @@
 const Loading = () => {
-	return <div className="absolute left-2/4 top-1/3 text-9xl">⌛</div>;
+	return (
+		<div className="absolute flex items-center justify-center w-screen h-screen align-middle">
+			<span className="text-9xl justify-self-center animate-spin">⌛</span>
+		</div>
+	);
 };
 
 export default Loading;

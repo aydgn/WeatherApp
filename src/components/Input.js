@@ -20,18 +20,22 @@ const input = (props) => {
 		}
 	}
 	return (
-		<div className="text-center ">
+		<div className="flex flex-col items-center justify-center p-3 sm:flex-row">
 			<input
-				className="p-3 border rounded shadow"
-				placeholder="Select a city"
+				className="order-first w-full p-3 mx-3 border rounded shadow sm:w-auto"
+				placeholder="Type a city &crarr;"
+				autoFocus
 				onKeyPress={(e) => {
-					if (e.code === "Enter") {
+					if (e.code === "Enter" && e.target.value !== "") {
 						props.setCity(e.target.value);
 					}
 				}}
-			></input>{" "}
-			or{" "}
-			<button className="p-3 border" onClick={getLocation}>
+			></input>
+			<span>or</span>
+			<button
+				className="order-2 w-full p-3 mx-3 border shadow sm:w-auto "
+				onClick={getLocation}
+			>
 				📍 Get my location
 			</button>
 		</div>
