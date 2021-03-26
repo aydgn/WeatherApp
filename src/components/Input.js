@@ -22,15 +22,16 @@ const input = (props) => {
 	return (
 		<div className="text-center ">
 			<input
-				className="border p-3 rounded shadow"
+				className="p-3 border rounded shadow"
 				placeholder="Select a city"
 				onKeyPress={(e) => {
 					if (e.code === "Enter") {
 						props.setCity(e.target.value);
 					}
 				}}
-			></input>
-			<button className="border p-3" onClick={getLocation}>
+			></input>{" "}
+			or{" "}
+			<button className="p-3 border" onClick={getLocation}>
 				📍 Get my location
 			</button>
 		</div>
