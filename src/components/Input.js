@@ -25,10 +25,12 @@ const Input = (props) => {
 				<input
 					type="search"
 					className={`w-full p-3 border rounded shadow sm:w-auto `}
-					placeholder="Type a city &crarr;"
+					placeholder="Search a city"
+					onBlur={(e) => {
+						e.target.select();
+					}}
 					autoFocus
 					onChange={(e) => {
-						console.log(e.target.value);
 						setInputValue(e.target.value);
 					}}
 					onKeyPress={(e) => {
@@ -39,12 +41,13 @@ const Input = (props) => {
 					}}
 				></input>
 				<button
+					type="reset"
 					className="p-3 border shadow"
 					onClick={() => {
 						props.setCity(inputValue);
 					}}
 				>
-					Search
+					🔍
 				</button>
 			</div>
 			<div className="flex flex-col items-center justify-center p-3">
