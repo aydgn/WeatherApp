@@ -23,7 +23,7 @@ const Input = (props) => {
 		<>
 			<div className="flex items-center justify-center px-3">
 				<input
-					className="w-full p-3 border rounded shadow sm:w-auto"
+					className={`w-full p-3 border rounded shadow sm:w-auto `}
 					placeholder="Type a city &crarr;"
 					autoFocus
 					onChange={(e) => {

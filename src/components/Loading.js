@@ -1,6 +1,6 @@
 const Loading = () => {
 	return (
-		<div className="absolute flex items-center justify-center w-screen h-screen align-middle">
+		<div className="flex items-center justify-center p-20 align-middle">
 			<span className="text-9xl justify-self-center animate-spin">⌛</span>
 		</div>
 	);
