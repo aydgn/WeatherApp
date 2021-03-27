@@ -23,6 +23,7 @@ const Input = (props) => {
 		<>
 			<div className="flex items-center justify-center px-3">
 				<input
+					type="search"
 					className={`w-full p-3 border rounded shadow sm:w-auto `}
 					placeholder="Type a city &crarr;"
 					autoFocus
@@ -33,6 +34,7 @@ const Input = (props) => {
 					onKeyPress={(e) => {
 						if (e.code === "Enter" && e.target.value !== "") {
 							props.setCity(e.target.value);
+							e.target.value = "";
 						}
 					}}
 				></input>
