@@ -10,19 +10,22 @@ const Header = (props) => {
 		);
 	if (!props.data) return <Loading />;
 	return (
-		<header className="flex flex-col justify-center p-12 font-thin text-center">
-			<h1 className="text-9xl">{props.data.current.temp_c}&#176;</h1>
-			<span className="capitalize">
-				{props.data.location.name} - {props.data.location.country}
-			</span>
-			<div>{props.data.current.condition.text}</div>
-			<div>
-				<img
-					src={`https://${props.data.current.condition.icon}`}
-					alt={`${props.data.location.name} - ${props.data.current.condition.text}`}
-					title={`${props.data.location.name} - ${props.data.current.condition.text}`}
-					className="inline"
-				></img>
+		<header className="flex flex-col items-center justify-center p-10 mb-10 font-thin text-center text-white bg-blue-400">
+			<div className="px-10 py-5 bg-blue-500 rounded-xl bg-opacity-20">
+				<h1 className="text-9xl">{props.data.current.temp_c}&#176;</h1>
+				<span className="capitalize ">
+					{props.data.location.name} - {props.data.location.country}
+				</span>
+				<div>{props.data.current.condition.text}</div>
+
+				<div>
+					<img
+						src={`https://${props.data.current.condition.icon}`}
+						alt={`${props.data.location.name} - ${props.data.current.condition.text}`}
+						title={`${props.data.location.name} - ${props.data.current.condition.text}`}
+						className="inline"
+					></img>
+				</div>
 			</div>
 		</header>
 	);

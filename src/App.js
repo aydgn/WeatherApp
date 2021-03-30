@@ -4,7 +4,7 @@ import useSWR from "swr";
 import Header from "./components/Header";
 import Input from "./components/Input";
 
-const apiKey = "e1b4ce07c4d44753be4182931212503";
+const apiKey = process.env.REACT_APP_API_KEY;
 const fetcher = async (url) => {
 	const res = await fetch(url);
 
