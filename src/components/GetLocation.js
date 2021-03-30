@@ -5,7 +5,6 @@ const GetLocation = ({ setCity }) => {
 			navigator.geolocation.getCurrentPosition(function (position) {
 				lat = position.coords.latitude;
 				long = position.coords.longitude;
-				console.log(lat, long);
 
 				fetch(
 					`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${long}`
@@ -15,15 +14,13 @@ const GetLocation = ({ setCity }) => {
 			});
 		} else {
 			console.log("Not Available");
+			alert("We your location data in order to use this feature.");
 		}
 	};
 	return (
-		<div className="flex flex-col items-center justify-center flex-1 p-3">
+		<div className="flex flex-col items-center justify-center flex-1">
 			<span>or</span>
-			<button
-				className="w-full p-3 mx-3 border shadow sm:w-auto"
-				onClick={getLocation}
-			>
+			<button className="w-full py-3 border shadow" onClick={getLocation}>
 				📍 Get my location
 			</button>
 		</div>
