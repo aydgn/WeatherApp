@@ -31,7 +31,7 @@ function App() {
 	);
 
 	return (
-		<div className="flex flex-col app">
+		<div className="flex flex-col">
 			<Header data={data} error={error} city={city} />
 			<Input data={data} setCity={setCity} error={error} />
 		</div>
