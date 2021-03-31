@@ -9,7 +9,7 @@ const Input = ({ data, setCity, error }) => {
 				<div className="flex mb-5">
 					<input
 						type="search"
-						className="w-full p-3 border rounded shadow sm:w-auto"
+						className="w-full p-3 border shadow-sm sm:w-auto"
 						placeholder="Search a city"
 						onBlur={(e) => {
 							e.target.select();
@@ -27,7 +27,7 @@ const Input = ({ data, setCity, error }) => {
 					></input>
 					<button
 						type="reset"
-						className="p-3 border shadow"
+						className="p-3 border shadow-sm hover:ring-1"
 						onClick={() => {
 							setCity(inputValue);
 						}}

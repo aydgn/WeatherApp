@@ -5,8 +5,8 @@ const Header = ({ data, error, city }) => {
 	if (error) return <Error city={city} />;
 	if (!data) return <Loading />;
 	return (
-		<header className="flex flex-col items-center justify-center p-10 font-thin text-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 h-96">
-			<div className="px-10 py-5 bg-blue-500 shadow-sm rounded-xl bg-opacity-20">
+		<header className="flex flex-col items-center justify-center p-10 font-thin text-center text-white bg-gradient-to-b from-green-400 to-blue-500 h-96">
+			<div className="px-10 py-5 bg-white shadow-sm rounded-xl bg-opacity-5">
 				<h1 className="text-9xl">{data.current.temp_c}&#176;</h1>
 				<span className="capitalize ">
 					{data.location.name} - {data.location.country}
