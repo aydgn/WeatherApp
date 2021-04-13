@@ -1,11 +1,14 @@
 import Loading from "./Loading";
 import Error from "./Error";
 
-const Header = ({ data, error, city }) => {
+const Header = ({ data, error, city, open, setOpen }) => {
 	if (error) return <Error city={city} />;
 	if (!data) return <Loading />;
 	return (
-		<header className="flex flex-col items-center justify-center p-10 font-thin text-center text-white bg-gradient-to-b from-green-400 to-blue-500 h-96">
+		<header className="flex flex-col items-center justify-center font-thin text-center text-white bg-gradient-to-b from-green-400 to-blue-500 h-96">
+			<button onClick={() => setOpen(!open)} className="p-1 border rounded">
+				Change City
+			</button>
 			<div className="px-10 py-5 bg-white shadow-sm rounded-xl bg-opacity-5">
 				<h1 className="text-9xl">{data.current.temp_c}&#176;</h1>
 				<span className="capitalize ">

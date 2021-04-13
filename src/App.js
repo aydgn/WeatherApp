@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import useSWR from "swr";
 import Header from "./components/Header";
 import Input from "./components/Input";
@@ -23,6 +22,7 @@ const fetcher = async (url) => {
 
 function App() {
 	const [city, setCity] = useState("İstanbul");
+	const [open, setOpen] = useState(false);
 	useEffect(() => {});
 
 	const { data, error } = useSWR(
@@ -32,8 +32,20 @@ function App() {
 
 	return (
 		<div className="flex flex-col">
-			<Header data={data} error={error} city={city} />
-			<Input data={data} setCity={setCity} error={error} />
+			<Header
+				data={data}
+				error={error}
+				city={city}
+				open={open}
+				setOpen={setOpen}
+			/>
+			<Input
+				data={data}
+				setCity={setCity}
+				error={error}
+				open={open}
+				setOpen={setOpen}
+			/>
 		</div>
 	);
 }
