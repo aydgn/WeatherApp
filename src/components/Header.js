@@ -7,6 +7,7 @@ const Header = ({ data, error, city, open, setOpen }) => {
   return (
     <header className="flex flex-col items-center justify-center font-thin text-center text-white bg-gradient-to-b from-green-400 to-blue-500 h-96">
       <button
+        aria-label="menu"
         onClick={() => setOpen(!open)}
         className="self-end mr-5 text-3xl rounded"
       >
