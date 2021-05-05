@@ -32,6 +32,8 @@ const Header = ({ data, error, city, open, setOpen }) => {
             alt={`${data.location.name} - ${data.current.condition.text}`}
             title={`${data.location.name} - ${data.current.condition.text}`}
             className="inline"
+            height="64px"
+            width="64px"
           ></img>
         </div>
       </div>
