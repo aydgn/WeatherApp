@@ -15,7 +15,7 @@ const Header = ({ data, error, city, open, setOpen }) => {
           <path
             d="M1 1h8M1 4h8M1 7h8"
             stroke="#fff"
-            stroke-width="2"
+            stroke-width="1"
             stroke-linecap="round"
           />
         </svg>
